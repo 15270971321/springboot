@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
-
 	<!-- 文件输出格式 -->
-	<property name="PATTERN" value="%-12(%d{yyyy-MM-dd HH:mm:ss.SSS}) |-%-5level [%thread] %c [%L] -| %msg%n" />
-	<!-- test文件路径 -->
-	<property name="TEST_FILE_PATH" value="/opt/roncoo/logs" />
-	<!-- pro文件路径 -->
-	<property name="PRO_FILE_PATH" value="/opt/roncoo/logs" />
+	<property name="PATTERN" value="%-12(%d{yyyy-MM-dd HH:mm:ss.SSS}) |-%-5level %c [%L] -| %msg [%thread] %n " />
+	
+	<!-- 文件路径 -->
+	<property name="FILE_PATH" value="/opt/var/bvlan/logs" />
 
 	<!-- 开发环境 -->
 	<springProfile name="dev">
@@ -15,11 +13,19 @@
 				<pattern>${PATTERN}</pattern>
 			</encoder>
 		</appender>
+		<appender name="CONSOLE_LOG" class="ch.qos.logback.core.FileAppender">
+			<append>true</append>
+			<!-- 文件路径 -->
+			<file>${FILE_PATH}/bvlan.log</file>
+			<layout class="ch.qos.logback.classic.PatternLayout">
+				<pattern>${PATTERN}</pattern>
+			</layout>
+		</appender>
 		
 		<logger name="com.roncoo.education" level="debug"/>
-
 		<root level="info">
 			<appender-ref ref="CONSOLE" />
+			<appender-ref ref="CONSOLE_LOG" />
 		</root>
 	</springProfile>
 
@@ -27,20 +33,20 @@
 	<springProfile name="test">
 		<!-- 每天产生一个文件 -->
 		<appender name="TEST-FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
-			<!-- 文件路径 -->
-			<file>${TEST_FILE_PATH}</file>
-			<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-				<!-- 文件名称 -->
-				<fileNamePattern>${TEST_FILE_PATH}/info.%d{yyyy-MM-dd}.log</fileNamePattern>
-				<!-- 文件最大保存历史数量 -->
-				<MaxHistory>100</MaxHistory>
+			<rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+				<!-- 文件路径 -->
+				<fileNamePattern>${FILE_PATH}/bvlan.%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+				<!-- 每个文件最大 -->
+				<maxFileSize>10MB</maxFileSize> 
+				<!-- 文件最大保存历史数量 -->     
+			    <maxHistory>10</maxHistory>
+			    <!-- 所有文件总共最大 -->
+			    <totalSizeCap>1GB</totalSizeCap>
 			</rollingPolicy>
-			
 			<layout class="ch.qos.logback.classic.PatternLayout">
 				<pattern>${PATTERN}</pattern>
 			</layout>
 		</appender>
-		
 		<root level="info">
 			<appender-ref ref="TEST-FILE" />
 		</root>
@@ -49,17 +55,21 @@
 	<!-- 生产环境 -->
 	<springProfile name="prod">
 		<appender name="PROD_FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
-			<file>${PRO_FILE_PATH}</file>
-			<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-				<fileNamePattern>${PRO_FILE_PATH}/warn.%d{yyyy-MM-dd}.log</fileNamePattern>
-				<MaxHistory>100</MaxHistory>
+			<rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+				<!-- 文件路径 -->
+				<fileNamePattern>${FILE_PATH}/bvlan.%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+				<!-- 每个文件最大 -->
+				<maxFileSize>10MB</maxFileSize> 
+				<!-- 文件最大保存历史数量 -->     
+			    <maxHistory>100</maxHistory>
+			    <!-- 所有文件总共最大 -->
+			    <totalSizeCap>20GB</totalSizeCap>
 			</rollingPolicy>
 			<layout class="ch.qos.logback.classic.PatternLayout">
 				<pattern>${PATTERN}</pattern>
 			</layout>
 		</appender>
-		
-		<root level="warn">
+		<root level="info">
 			<appender-ref ref="PROD_FILE" />
 		</root>
 	</springProfile>

@@ -1,0 +1,97 @@
+
+#fh5co-photos-section{
+  padding-bottom: 5em;
+}
+
+.ri-grid ul li {
+  background: transparent !important;
+}
+.ri-grid ul li a .desc {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  background: rgba(250, 126, 10, 0.8);
+  opacity: 0;
+  padding-top: 35%;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+.ri-grid ul li a .desc h3 {
+  font-size: 20px;
+  color: white;
+  text-decoration: none;
+  -webkit-transition: 0.6s;
+  -o-transition: 0.6s;
+  transition: 0.6s;
+}
+.ri-grid ul li a .desc h3 span {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+.ri-grid ul li a:hover .desc, .ri-grid ul li a:focus .desc {
+  opacity: 1;
+}
+.ri-grid ul li a:hover img, .ri-grid ul li a:focus img {
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  -o-transform: scale(1);
+  transform: scale(1);
+  border: 1px solid red;
+}
+
+.fully-footer-social ul li.col-block {
+    text-align: center;
+}
+.fully-footer-social ul li.col-block span {
+    display: block;
+    margin: 0 auto 5px;
+}
+.fully-footer-social-show{
+	padding: 12px 0;
+}
+.fully-footer-social {
+	position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+.fully-footer-social ul{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	font-size: 0;
+}
+.fully-footer-social ul li{
+	width: 25%;
+	display: inline-block;
+	text-align: center;
+	padding: 3px 0;
+}
+.fully-footer-social ul li a{
+    width: 100%;
+	color: #f7f6f3;
+	font-size: 12px;
+	text-transform: uppercase;
+	display: block;
+	letter-spacing: 1px;
+	font-family: lato;
+}
+.fully-footer-social ul li span{
+	display: inline-block;
+	font-size: 14px;
+	margin-right: 10px;
+}	
+
+.fully-footer-social ul li a, .footer-2 .fully-footer-social ul li a, .rst_footer_style_03 .fully-footer-social li a {
+    color: #111111;
+}
+.fully-footer-social, .footer-2 .fully-footer-social ul, .rst_footer_style_03 .fully-footer-social {
+    background-color: #FDFCFC;
+}

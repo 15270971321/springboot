@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head lang="en">
-	<title>Spring Boot Demo</title>
-	<link href="/css/index.css" rel="stylesheet" />
-	<link href="/css/font-awesome.css" rel="stylesheet" />
+	<title>login</title>
+	<link href="/css/login/login.css" rel="stylesheet" />
+	<#include "all.ftl">
 </head>
 <body>
 	<div class="login-main">
@@ -44,7 +44,7 @@
 		</div>
 	</div>
 </body>
-<script type="text/javascript" src="/webjars/jquery/3.3.1-1/jquery.min.js"></script>
+<script type="text/javascript" src="/webjars/jquery/2.2.4/jquery.min.js"></script>
 <script type="text/javascript">
 
 </script>

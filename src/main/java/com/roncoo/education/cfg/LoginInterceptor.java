@@ -7,12 +7,14 @@ package com.roncoo.education.cfg;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
 
 /**
- * 一句话功能简述 功能详细描述
+ * 拦截器
  *
  * @author tgy
  * @version [版本号, 2018年3月15日]
@@ -24,6 +26,7 @@ public class LoginInterceptor implements HandlerInterceptor {
     /**
      * 日志打印
      */
+    private static final Logger LOGGER = LoggerFactory.getLogger(LoginInterceptor.class);
 
     @Override
     public boolean preHandle(HttpServletRequest httpServletRequest,
@@ -34,7 +37,7 @@ public class LoginInterceptor implements HandlerInterceptor {
         int port = httpServletRequest.getServerPort();
         String path = httpServletRequest.getContextPath();
         String basePath = scheme + "://" + serverName + ":" + port + path;
-        httpServletRequest.setAttribute("basePath", basePath);
+        LOGGER.info("basePath:" + basePath);
         return true;
     }
 
