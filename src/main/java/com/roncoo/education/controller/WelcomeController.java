@@ -32,7 +32,7 @@ public class WelcomeController {
         return "about";
     }
 
-    @RequestMapping(value = "/work")
+    @RequestMapping(value = "/works")
     public String work(ModelMap map) {
         map.put("title", "spring boot Demo");
         return "work";

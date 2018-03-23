@@ -10,7 +10,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 
 /**
- * 拦截器配置
+ * 页面配置
  *
  * @author tgy
  * @version [版本号, 2018年3月15日]
@@ -20,6 +20,11 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 @Configuration
 public class DefaultWebAppConfigurer implements WebMvcConfigurer {
 
+    /**
+     * 拦截器配置
+     *
+     * @param registry
+     */
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(new LoginInterceptor()).addPathPatterns("/**");

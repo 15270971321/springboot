@@ -14,8 +14,8 @@
 </head>
 <body>
 	<#include "top.ftl">
-	<div id="fh5co-intro-section">
-		<div class="container">
+	<div class="bg-color-sky-light">
+		<div class="content-md container">
 			<div class="row">
 				<div class="col-md-8 col-md-offset-2 animate-box text-center">
 					<h2 class="intro-heading">美滋滋咿呀哟哈哈哈</h2>

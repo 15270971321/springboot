@@ -5,7 +5,7 @@
 <link href="css/layout.min.css" rel="stylesheet" type="text/css"/>
 <link href="css/style.css" rel="stylesheet" type="text/css"/>
 <link href="css/login/font-awesome.css" rel="stylesheet" />
-
+<link href="css/reset.css" rel="stylesheet" />
 
 <script type="text/javascript" src="/webjars/jquery/2.2.4/jquery.min.js"></script>
 <script type="text/javascript" src="/webjars/bootstrap/3.3.6/js/bootstrap.min.js"></script>

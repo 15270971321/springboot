@@ -28,7 +28,7 @@
 	                        </a>
 	                    </li>
 	                    <li class="nav-item">
-	                        <a class="nav-item-child" href="/work" id="work">
+	                        <a class="nav-item-child" href="/works" id="work">
 	                            Work
 	                        </a>
 	                    </li>

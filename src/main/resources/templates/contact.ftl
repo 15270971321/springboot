@@ -11,6 +11,10 @@
 </head>
 <body>
 	<#include "top.ftl">
+	<div class="bg-color-sky-light">
+      <div class="content-md container">
+      </div>
+     </div>
 	<#include "footer.ftl">
 </body>
 

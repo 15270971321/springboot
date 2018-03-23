@@ -7,8 +7,7 @@
 	<artifactId>spring-boot-demo-14-2</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
-	
-	<name>bvlan</name>
+	<name>spring-boot-demo-14-2</name>
 	<description>Demo project for Spring Boot</description>
 
 	<parent>
@@ -73,12 +72,15 @@
    		 </dependency> -->
 	</dependencies>
 	<build>
+		<finalName>bvlan</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<!--热部署配置-->
-				<configuration><fork>true</fork></configuration>
+				<configuration>
+					<fork>true</fork>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
