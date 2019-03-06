@@ -4,10 +4,10 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.roncoo.education</groupId>
-	<artifactId>spring-boot-demo-14-2</artifactId>
+	<artifactId>bvlan</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
-	<name>spring-boot-demo-14-2</name>
+	<name>bvlan</name>
 	<description>Demo project for Spring Boot</description>
 
 	<parent>

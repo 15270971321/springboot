@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="bvlan:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>bvlan</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="bvlan.war">
+      <element id="artifact" artifact-name="bvlan:war exploded" />
+    </root>
+  </artifact>
+</component>
